@@ -1,0 +1,40 @@
+{
+  "name": "srv-comment",
+  "version": "2.0.0",
+  "private": true,
+  "main": "./src/index.js",
+  "scripts": {
+    "prebuild": "rm -rf build",
+    "build": "cross-env NODE_ENV=production babel src --out-dir build --copy-files",
+    "prestart": "cross-env NODE_ENV=production yarn run build",
+    "start": "cross-env NODE_ENV=production node build/index.js",
+    "dev": "babel-watch src/index.js --watch src"
+  },
+  "prettier": "@web-lite/prettier-config",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@koa/cors": "^3.0.0",
+    "@koa/router": "^8.0.5",
+    "bluebird": "^3.7.1",
+    "core-js": "3",
+    "db-migrate": "^0.11.6",
+    "db-migrate-pg": "^1.0.0",
+    "knex": "^0.20.6",
+    "koa": "^2.8.2",
+    "koa-bodyparser": "^4.2.1",
+    "pg": "^7.14.0",
+    "ramda": "^0.26.1",
+    "regenerator-runtime": "^0.13.3",
+    "uuid": "^3.3.3",
+    "zarinpal-checkout": "^0.2.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@web-lite/prettier-config": "^1.0.0",
+    "babel-watch": "^7.0.0",
+    "cross-env": "^6.0.3",
+    "prettier": "^1.19.1"
+  }
+}

@@ -1,0 +1,11 @@
+
+{
+  "dev": {
+    "driver": "pg",
+    "user": "weblite", 
+    "password": "allmosts",    
+    "host": "localhost",
+    "port": "5432",
+    "database": "weblite"
+  }
+}
